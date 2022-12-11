@@ -1,2 +1,4 @@
 node_modules
 .blabla
+.test-git-stash
+test-pull-request
