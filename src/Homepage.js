@@ -27,7 +27,9 @@ export default class Homepage extends Component {
         this.setState({ isLoggedIn: true })
       })
       .catch((error) => {
+        // Sign in failed
         console.log("GRESKA");
+        this.setState({ isLoginBad: true })
         // const errorCode = error.code;
         // const errorMessage = error.message;
       });
@@ -37,7 +39,7 @@ export default class Homepage extends Component {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, userUsername, userPassword)
       .then((userCredential) => {
-        // Signed in 
+        // Register successfull 
         console.log("USPESNO")
         const user = userCredential.user;
         console.log(user);
@@ -45,6 +47,7 @@ export default class Homepage extends Component {
 
       })
       .catch((error) => {
+        // Register failed
         console.log("NIJE USPESNO")
         // const errorCode = error.code;
         // const errorMessage = error.message;

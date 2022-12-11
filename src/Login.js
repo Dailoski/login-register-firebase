@@ -20,6 +20,7 @@ export default class Login extends Component {
 
 
   render() {
+    const that = this
     return (
       <div>
         <p>Login</p>
@@ -30,7 +31,7 @@ export default class Login extends Component {
         <br />
         <br />
         <button onClick={() => { this.props.loginHandler(this.state.password, this.state.username) }} >Login</button>
-        <button onClick={() => { this.props.goToRegisterPage(true) }}>GO TO REGISTER</button>
+        <button onClick={function () { that.props.goToRegisterPage(true) }}>GO TO REGISTER</button>
       </div>
 
     )
